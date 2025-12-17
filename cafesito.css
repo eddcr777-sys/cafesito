@@ -1,0 +1,331 @@
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+@keyframes scroll-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #caae92; /* Lino antiguo, más cálido */
+    color: #333;
+    background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+}
+
+header {
+    color: white;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden; 
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+header::before, header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 200%; 
+    height: 50%;
+    background-size: 16.66% 100%; 
+    z-index: -1;
+}
+
+
+header::before {
+    top: 0;
+    background-image: url('https://bialetti.pe/wp-content/uploads/2019/03/cafe-expreso.jpg'),
+                      url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg'),
+                      url('https://images.pexels.com/photos/4109744/pexels-photo-4109744.jpeg'),
+                      url('https://images.pexels.com/photos/1727123/pexels-photo-1727123.jpeg'),
+                      url('https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg'),
+                      url('https://images.pexels.com/photos/585753/pexels-photo-585753.jpeg'),
+                      /* Repetir para bucle infinito */
+                      url('https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg'),
+                      url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg'),
+                      url('https://images.pexels.com/photos/4109744/pexels-photo-4109744.jpeg'),
+                      url('https://images.pexels.com/photos/1727123/pexels-photo-1727123.jpeg'),
+                      url('https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg'),
+                      url('https://images.pexels.com/photos/585753/pexels-photo-585753.jpeg');
+    animation: scroll-left 40s linear infinite;
+}
+
+header::after {
+    top: 50%;
+    background-image: url('https://images.pexels.com/photos/585753/pexels-photo-585753.jpeg'),
+                      url('https://images.pexels.com/photos/2074122/pexels-photo-2074122.jpeg'),
+                      url('https://images.pexels.com/photos/3718635/pexels-photo-3718635.jpeg'),
+                      url('https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg'),
+                      url('https://img.freepik.com/fotos-premium/granos-cafe-siendo-procesados-maquina-tostar_1048944-1907653.jpg'),
+                      url('https://www.maersk.com/~/media_sc9/maersk/insights/integrated-logistics/2025/09/journey-of-the-bean_1024x576.jpg?w=900&hash=BE4AD0B11245614199A2B4BD3F4CEE82'),
+                      /* Repetir para bucle infinito */
+                      url('https://images.pexels.com/photos/2074122/pexels-photo-2074122.jpeg'),
+                      url('https://images.pexels.com/photos/2074122/pexels-photo-2074122.jpeg'),
+                      url('https://images.pexels.com/photos/3718635/pexels-photo-3718635.jpeg'),
+                      url('https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg'),
+                      url('https://img.freepik.com/fotos-premium/granos-cafe-siendo-procesados-maquina-tostar_1048944-1907653.jpg'),
+                      url('https://www.maersk.com/~/media_sc9/maersk/insights/integrated-logistics/2025/09/journey-of-the-bean_1024x576.jpg?w=900&hash=BE4AD0B11245614199A2B4BD3F4CEE82');
+    animation: scroll-right 40s linear infinite;
+    
+}p{
+    line-height: 1.6;
+    margin: 20px;
+}
+
+
+header h1 {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+}
+header .subtitle {
+    font-size: 1.2em;
+    font-weight: normal;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.page-container {
+    display: flex;
+}
+
+aside {
+    width: 280px;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgba(250, 240, 230, 0.75); 
+    border-right: 2px solid #eaddc7;
+    transition: width 0.4s ease;
+    box-shadow: 0 4px 10px rgb(117, 69, 2);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    margin-top: 19px;
+}
+
+aside:hover {
+    width: 320px;
+}
+
+aside h3 {
+    color: #8b4513; 
+    border-bottom: 1px solid #eaddc7;
+    padding-bottom: 5px;
+}
+
+aside nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside nav a {
+    text-decoration: none;
+    color: #4b3832;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, padding-left 0.3s;
+}
+
+aside nav a:hover {
+    background-color: #f5eadd;
+    padding-left: 25px;
+}
+
+main {
+    padding: 20px;
+    flex-grow: 1; 
+}
+
+section {
+    background-color: rgba(250, 240, 230, 0.75); 
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(117, 69, 2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+section img { 
+    max-width: 45%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgb(117, 69, 2);;
+}
+
+.sidebar-section {
+    margin-top: 25px;
+}
+
+.sidebar-section img,
+.sidebar-section iframe {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.sidebar-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-section a {
+    color: #4b3832;
+}
+
+footer {
+    background-color: #4b3832; 
+    color: #faf0e6; 
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px; 
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.social-links {
+    margin: 10px 0;
+}
+
+.social-links a, footer a {
+    color: #faf0e6;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: text-decoration 0.3s;
+}
+
+.social-links a:hover, footer a:hover {
+    text-decoration: underline;
+}
+
+.bebidas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 15px; 
+}
+
+.bebida-card {
+    background-color: #fdf5e6;
+    border: 1px solid #eaddc7;
+    border-radius: 8px;
+    flex: 0 0 300px; 
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgb(117, 69, 2);
+    transition: transform 0.3s;
+}
+
+.bebida-card:hover {
+    transform: scale(1.05);
+}
+
+.bebida-card img {
+    max-width: 90%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.image-scroll-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+  
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.image-scroll-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.image-scroll-container img {
+    flex: 1 1 400px;
+    max-width: 400px;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #eaddc7;
+        box-sizing: border-box; 
+    }
+
+    header {
+        height: 30vh; 
+    }
+
+    header h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    section img {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible.slide-in-left {
+    animation: slideInLeft 0.8s forwards;
+}
+
+.animate-on-scroll.visible.slide-in-right {
+    animation: slideInRight 0.8s forwards;
+}
