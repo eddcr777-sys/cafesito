@@ -1,33 +1,20 @@
-@keyframes desplazamiento-izquierda {
-    0% {
-        transform: translateX(0);
-    }
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap');
 
-    100% {
-        transform: translateX(-50%);
-    }
+:root {
+    --cafe-oscuro: #2C1810;
+    --cafe-premium: #4E342E;
+    --dorado: #C19A6B;
+    --crema: #F5E6D3;
+    --blanco-puro: #FFFFFF;
+    --gris-suave: #F9F9F9;
+    --transicion: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --sombra-premium: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes desplazamiento-derecha {
-    0% {
-        transform: translateX(-50%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes aparecer-suave {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -35,210 +22,307 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: #caae92;
-    color: #333;
-    background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--gris-suave);
+    color: var(--cafe-oscuro);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/*navegación */
+.barra-navegacion {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transicion);
+    background: rgba(44, 24, 16, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.logo {
+    color: var(--dorado);
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.enlaces-nav {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.enlaces-nav a {
+    color: var(--crema);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transicion);
+    position: relative;
+}
+
+.enlaces-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--dorado);
+    transition: var(--transicion);
+}
+
+.enlaces-nav a:hover::after {
+    width: 100%;
 }
 
 
 header {
-    color: white;
-    height: 50vh;
+    height: 100vh;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     position: relative;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--blanco-puro);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 }
 
-header::before,
-header::after {
-    content: '';
+.hero-fondo {
     position: absolute;
-    left: 0;
-    width: 200%;
-    height: 50%;
-    background-size: 16.66% 100%;
-    z-index: -1;
-}
-
-header::before {
     top: 0;
-    background-image: url('https://bialetti.pe/wp-content/uploads/2019/03/cafe-expreso.jpg'),
-        url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg'),
-        url('https://images.pexels.com/photos/4109744/pexels-photo-4109744.jpeg'),
-        url('https://images.pexels.com/photos/1727123/pexels-photo-1727123.jpeg'),
-        url('https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg'),
-        url('https://images.pexels.com/photos/585753/pexels-photo-585753.jpeg');
-    animation: desplazamiento-izquierda 40s linear infinite;
-}
-
-header::after {
-    top: 50%;
-    background-image: url('https://images.pexels.com/photos/585753/pexels-photo-585753.jpeg'),
-        url('https://images.pexels.com/photos/2074122/pexels-photo-2074122.jpeg'),
-        url('https://images.pexels.com/photos/3718635/pexels-photo-3718635.jpeg'),
-        url('https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg'),
-        url('https://img.freepik.com/fotos-premium/granos-cafe-siendo-procesados-maquina-tostar_1048944-1907653.jpg'),
-        url('https://www.maersk.com/~/media_sc9/maersk/insights/integrated-logistics/2025/09/journey-of-the-bean_1024x576.jpg');
-    animation: desplazamiento-derecha 40s linear infinite;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center/cover;
+    transform: scale(1.1);
+    animation: zoomHero 20s infinite alternate;
 }
 
 header h1 {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    font-size: 3em;
-    font-weight: bold;
-    z-index: 1;
-    margin: 0;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s forwards 0.3s;
 }
 
 header .subtitulo {
-    font-size: 1.5em;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-    z-index: 1;
-    margin-top: 10px;
+    font-size: 1.4rem;
+    color: var(--dorado);
+    font-weight: 300;
+    max-width: 600px;
+    opacity: 0;
+    animation: fadeIn 1.2s forwards 0.8s;
 }
 
 .contenedor-pagina {
-    display: flex;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    
-}
-
-aside {
-    width: 280px;
-    padding: 20px;
-    margin: 20px;
-    background-color: rgba(250, 240, 230, 0.9);
-    border-radius: 12px;
-    height: fit-content;
-    position: sticky;
-    top: 20px;
-}
-
-aside h3 {
-    color: #8b4513;
-    border-bottom: 2px solid #eaddc7;
-    margin-top: 0;
-    padding-bottom: 5px;
-}
-
-aside nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-aside nav a {
-    text-decoration: none;
-    color: #4b3832;
-    padding: 10px;
-    border-radius: 8px;
-    display: block;
-    transition: 0.3s;
-}
-
-aside nav a:hover {
-    background-color: #f5eadd;
-    padding-left: 20px;
+    padding: 0 5%;
 }
 
 main {
-    flex: 1;
-    padding: 20px;
+    padding: 80px 0;
 }
 
 section {
-    background-color: rgba(250, 240, 230, 0.9);
-    padding: 30px;
-    margin-bottom: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    animation: aparecer-suave 0.8s ease-out;
+    margin-bottom: 120px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transicion);
 }
 
-.contenedor-imagenes {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 20px;
+.seccion-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.contenedor-imagenes img {
-    flex: 1;
-    min-width: 250px;
-    height: 200px;
+h2 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--cafe-premium);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--dorado);
+    margin: 20px auto 0;
+}
+
+
+.grid-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.texto-bloque p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.imagen-bloque img {
+    width: 100%;
+    height: 500px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 30px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
+    transition: var(--transicion);
 }
-.contenedor-imagenes img:hover {
-   transform: translateY(-8px);
-   transition: transform 0.3s ease-in-out;
+
+.imagen-bloque img:hover {
+    transform: scale(1.02);
 }
+
 
 .contenedor-bebidas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
 .tarjeta-bebida {
-    background-color: white;
-    width: 260px;
-    padding: 15px;
-    border-radius: 10px;
+    background: var(--blanco-puro);
+    padding: 40px;
+    border-radius: 30px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
+    box-shadow: var(--sombra-premium);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: var(--transicion);
 }
 
 .tarjeta-bebida:hover {
-    transform: translateY(-5px);
+    transform: translateY(-20px);
+    border-color: var(--dorado);
 }
 
 .tarjeta-bebida img {
     width: 100%;
-    height: 160px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    border-radius: 20px;
+    margin-bottom: 25px;
 }
 
 .tarjeta-bebida h3 {
-    color: #5d3515;
-    margin: 10px 0;
+    font-size: 1.6rem;
+    color: var(--cafe-oscuro);
+    margin-bottom: 15px;
 }
 
-.tarjeta-bebida p {
-    font-size: 0.9em;
-    line-height: 1.4;
+
+aside {
+    display: none;
 }
 
 footer {
-    background-color: #4b3832;
-    color: white;
+    background-color: var(--cafe-oscuro);
+    color: var(--crema);
+    padding: 100px 5% 50px;
     text-align: center;
-    padding: 30px;
 }
 
-p a {
-    color: #d6ab88;
+footer .logo-footer {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--dorado);
+    margin-bottom: 30px;
+}
+
+footer .redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+footer a {
+    color: var(--crema);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transicion);
+}
+
+footer a:hover {
+    color: var(--dorado);
+}
+
+footer .copyright {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
 }
 
 
-@media (max-width: 900px) {
-    .contenedor-pagina {
-        flex-direction: column;
+@keyframes zoomHero {
+    from {
+        transform: scale(1);
     }
 
-    aside {
-        width: auto;
-        position: relative;
-        margin: 10px;
+    to {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .barra-navegacion {
+        padding: 20px 5%;
+    }
+
+    .enlaces-nav {
+        display: none;
+    }
+
+    .grid-contenido {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .imagen-bloque img {
+        height: 350px;
     }
 }

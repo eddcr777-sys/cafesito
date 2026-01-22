@@ -5,133 +5,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cafesito.css">
-    <title>Viva el Café njd</title>
+    <title>Cafesito | Me da vida</title>
 </head>
 
 <body>
 
+    <nav class="barra-navegacion">
+        <div class="logo">Cafesito</div>
+        <ul class="enlaces-nav">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#historia">Esencia</a></li>
+            <li><a href="#bebidas">Menú</a></li>
+            <li><a href="#metodos">El Arte</a></li>
+        </ul>
+    </nav>
+
     <header id="inicio">
+        <div class="hero-fondo"></div>
         <h1>Estoy loco por el Café</h1>
         <p class="subtitulo">¿Quieres un cafecito?</p>
     </header>
 
     <div class="contenedor-pagina">
 
-        <aside>
-            <h3>Navegación</h3>
-            <nav>
-                <ul>
-                    <li><a href="#historia">Historia del Café</a></li>
-                    <li><a href="#cultura">Cultura del Café</a></li>
-                    <li><a href="#granos">Tipos de Grano</a></li>
-                    <li><a href="#viaje">El Viaje del Grano</a></li>
-                    <li><a href="#bebidas">Bebidas Populares</a></li>
-                    <li><a href="#metodos">Métodos de Preparación</a></li>
-                </ul>
-            </nav>
-
-            <div class="seccion-lateral">
-                <h3>Galería</h3>
-                <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt="Latte" style="width: 100%; border-radius: 8px;">
-            </div>
-        </aside>
-
         <main>
             <section id="historia">
-                <h2>El Descubrimiento</h2>
-                <p>La leyenda cuenta que un pastor en Etiopía descubrió el café cuando sus cabras empezaron a saltar de
-                    energía tras comer unas pequeñas bayas rojas.</p>
-                <div class="contenedor-imagenes">
-                    <img src="https://images.pexels.com/photos/4109744/pexels-photo-4109744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        alt="Granos de café">
-                    <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        alt="Taza antigua">
+                <h2>Nuestra Esencia</h2>
+                <div class="grid-contenido">
+                    <div class="texto-bloque">
+                        <p>La leyenda cuenta que un pastor en Etiopía descubrió el café cuando sus cabras empezaron a
+                            saltar de energía tras comer unas pequeñas bayas rojas.</p>
+                        <p>Hoy, esa energía se traduce en pasión. Seleccionamos granos de origen único, respetando los
+                            tiempos de tueste para resaltar las notas más profundas de cada cosecha.</p>
+                    </div>
+                    <div class="imagen-bloque">
+                        <img src="https://images.pexels.com/photos/4109744/pexels-photo-4109744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Granos de café seleccionados">
+                    </div>
                 </div>
             </section>
 
             <section id="cultura">
                 <h2>Cultura Global</h2>
-                <p>El café es un ritual que conecta a las personas. En Italia se toma de pie, en Etiopía es una
-                    ceremonia espiritual y en Suecia es el famoso "Fika".</p>
-                <div class="contenedor-imagenes">
-                    <img src="https://images.pexels.com/photos/1727123/pexels-photo-1727123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        alt="Cafetería social">
-                    <img src="https://images.pexels.com/photos/585753/pexels-photo-585753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        alt="Preparación tradicional">
+                <script>
+                    // Script simple para añadir clase visible al hacer scroll
+                    const observarSecciones = () => {
+                        const opciones = { threshold: 0.2 };
+                        const observador = new IntersectionObserver((entradas) => {
+                            entradas.forEach(entrada => {
+                                if (entrada.isIntersecting) {
+                                    entrada.target.classList.add('seccion-visible');
+                                }
+                            });
+                        }, opciones);
+
+                        document.querySelectorAll('section').forEach(seccion => {
+                            observador.observe(seccion);
+                        });
+                    };
+                    window.addEventListener('DOMContentLoaded', observarSecciones);
+                </script>
+                <div class="grid-contenido">
+                    <div class="imagen-bloque">
+                        <img src="https://images.pexels.com/photos/1727123/pexels-photo-1727123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Cultura del café">
+                    </div>
+                    <div class="texto-bloque">
+                        <p>El café es un ritual que conecta a las personas. En Italia se toma de pie, en Etiopía es una
+                            ceremonia espiritual y en Suecia es el famoso "Fika".</p>
+                        <p>En Cafesito, honramos estas tradiciones aportando modernidad a la técnica y calidez a la
+                            taza.</p>
+                    </div>
                 </div>
             </section>
 
             <section id="bebidas">
-                <h2>Bebidas Populares</h2>
+                <h2>Bebidas Destacadas</h2>
                 <div class="contenedor-bebidas">
-
-                    <div class="tarjeta-bebida">
+                    <article class="tarjeta-bebida">
                         <img src="https://bialetti.pe/wp-content/uploads/2019/03/cafe-expreso.jpg" alt="Espresso">
                         <h3>Espresso</h3>
                         <p>Un trago corto y concentrado de café. Es la base pura y fuerte de casi todas las demás
                             bebidas.</p>
-                    </div>
-           
-                    <div class="tarjeta-bebida">
+                    </article>
+
+                    <article class="tarjeta-bebida">
                         <img src="https://tse4.mm.bing.net/th/id/OIP.u4I6Hdz5Gwc4HWp0M-gORgHaEK?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
                             alt="Cappuccino">
                         <h3>Cappuccino</h3>
                         <p>Equilibrio perfecto de partes iguales de espresso, leche al vapor y una densa capa de espuma.
                         </p>
-                    </div>
+                    </article>
 
-                    <div class="tarjeta-bebida">
+                    <article class="tarjeta-bebida">
                         <img src="https://tse3.mm.bing.net/th/id/OIP.sdt86oeR1Li5TI1r1ux2yAAAAA?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
                             alt="Latte">
                         <h3>Latte</h3>
                         <p>Mucho más cremoso, consiste en una base de espresso con mucha leche caliente y solo un poco
                             de espuma arriba.</p>
-                    </div>
+                    </article>
 
-                    <div class="tarjeta-bebida">
+                    <article class="tarjeta-bebida">
                         <img src="https://bialetti.pe/wp-content/uploads/2019/03/cafe-expreso.jpg" alt="Americano">
                         <h3>Americano</h3>
                         <p>Hecho simplemente añadiendo agua caliente sobre un shot de espresso, ideal para disfrutar el
                             sabor del café pero más suave.</p>
-                    </div>
+                    </article>
                 </div>
             </section>
 
             <section id="metodos">
-                <h2>Métodos de Preparación</h2>
+                <h2>El Arte de la Preparación</h2>
                 <div class="contenedor-bebidas">
-                    <div class="tarjeta-bebida">
+                    <article class="tarjeta-bebida">
                         <img src="https://tse1.explicit.bing.net/th/id/OIP.juTje9Hm3XgyXaw8dDZetQAAAA?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
                             alt="Prensa Francesa">
                         <h3>Prensa Francesa</h3>
                         <p>Extracción por inmersión total que produce un café con mucho cuerpo y aceites naturales
                             intactos.</p>
-                    </div>
+                    </article>
 
-                    <div class="tarjeta-bebida">
+                    <article class="tarjeta-bebida">
                         <img src="https://th.bing.com/th/id/R.b138cc17816a3f873af70812e7767b0c?rik=iodz69cmpQyJBQ&riu=http%3a%2f%2fcdn.coffeeao.com%2fwp-content%2fuploads%2f2019%2f12%2f20191213_5df30bd1b128a.jpg&ehk=vSjf7NieyVulbfhDrDZC3BywvrID5n%2b%2bzaFaw3BRf%2bo%3d&risl=&pid=ImgRaw&r=0"
                             alt="V60">
                         <h3>Pour-Over (V60)</h3>
                         <p>Método de goteo que resalta los sabores más limpios, frutales y delicados del grano.</p>
-                    </div>
+                    </article>
 
-                    <div class="tarjeta-bebida">
+                    <article class="tarjeta-bebida">
                         <img src="https://th.bing.com/th/id/R.b4ce611015795fe1c7f56de42f022965?rik=YeQeIfW19CbX6w&riu=http%3a%2f%2fwww.hazelnhershey.com%2fcdn%2fshop%2fproducts%2fAeroPress-Coffee-Maker-with-Coffee_1024x.jpg%3fv%3d1626617696&ehk=ovioJicpFDDtWdMXRDvVOx8NVkffvloZEGfdFB4HYQM%3d&risl=&pid=ImgRaw&r=0"
                             alt="AeroPress">
                         <h3>AeroPress</h3>
                         <p>Combina inmersión y presión para una extracción rápida y versátil. Produce un café suave y
                             sin amargor.</p>
-                    </div>
+                    </article>
                 </div>
             </section>
         </main>
     </div>
 
     <footer>
-        <p><strong>Contactanos en <a href="gmail">vivacafe@gmail.com</a></strong> </p>
-        <p><a href="Facebook">Facebook</a> | <a href="Instagram">Instagram</a></p>
-        <p>&copy; 2026 - Elvis De La Cruz</p>
+        <div class="logo-footer">Cafesito</div>
+        <div class="redes-sociales">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">X (Twitter)</a>
+        </div>
+        <address style="font-style: normal; margin-bottom: 20px;">
+            <strong>Contáctanos:</strong> <a href="mailto:vivacafe@gmail.com">vivacafe@gmail.com</a>
+        </address>
+        <div class="copyright">
+            &copy; 2026 - Elvis De La Cruz. Todos los derechos reservados.
+        </div>
     </footer>
 
 </body>
