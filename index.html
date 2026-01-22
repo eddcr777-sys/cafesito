@@ -47,24 +47,6 @@
 
             <section id="cultura">
                 <h2>Cultura Global</h2>
-                <script>
-                    // Script simple para añadir clase visible al hacer scroll
-                    const observarSecciones = () => {
-                        const opciones = { threshold: 0.2 };
-                        const observador = new IntersectionObserver((entradas) => {
-                            entradas.forEach(entrada => {
-                                if (entrada.isIntersecting) {
-                                    entrada.target.classList.add('seccion-visible');
-                                }
-                            });
-                        }, opciones);
-
-                        document.querySelectorAll('section').forEach(seccion => {
-                            observador.observe(seccion);
-                        });
-                    };
-                    window.addEventListener('DOMContentLoaded', observarSecciones);
-                </script>
                 <div class="grid-contenido">
                     <div class="imagen-bloque">
                         <img src="https://images.pexels.com/photos/1727123/pexels-photo-1727123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
