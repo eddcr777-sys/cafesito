@@ -239,8 +239,13 @@ footer {
     }
 
     .enlaces-nav {
-        display: none;
-        /* Simplificado para móviles */
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .enlaces-nav a {
+        font-size: 0.7rem;
     }
 
     header {
