@@ -27,13 +27,14 @@ body {
     overflow-x: hidden;
 }
 
-h1,
-h2,
-h3 {
+h1,h2,h3 {
     font-family: 'Playfair Display', serif;
 }
 
-/* --- Menu --- */
+
+
+
+
 .barra-navegacion {
     position: fixed;
     top: 0;
@@ -48,6 +49,9 @@ h3 {
     -webkit-backdrop-filter: blur(10px);
 }
 
+
+
+
 .logo {
     color: var(--dorado);
     font-size: 1.5rem;
@@ -56,11 +60,15 @@ h3 {
     letter-spacing: 2px;
 }
 
+
+
 .enlaces-nav {
     display: flex;
     gap: 20px;
     list-style: none;
 }
+
+
 
 .enlaces-nav a {
     color: var(--crema);
@@ -70,10 +78,10 @@ h3 {
     letter-spacing: 1px;
 }
 
-/* --- Hero --- */
+
+
 header {
     height: 70vh;
-    /* Altura reducida para móviles */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,11 +96,17 @@ header {
     padding: 20px;
 }
 
+
+
+
 header h1 {
     font-size: clamp(2.5rem, 8vw, 5rem);
     margin-bottom: 15px;
     animation: fadeUp 1s ease-out;
 }
+
+
+
 
 header .subtitulo {
     font-size: 1.2rem;
@@ -100,7 +114,9 @@ header .subtitulo {
     animation: fadeIn 1.5s ease-out;
 }
 
-/* --- Contenido --- */
+
+
+
 .contenedor-pagina {
     max-width: 1200px;
     margin: 0 auto;
@@ -114,6 +130,8 @@ main {
 section {
     margin-bottom: 80px;
 }
+
+
 
 h2 {
     font-size: clamp(2rem, 5vw, 3rem);
@@ -131,13 +149,17 @@ h2::after {
     margin: 15px auto 0;
 }
 
-/* --- Grid Secciones --- */
+
+
 .grid-contenido {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
 }
+
+
+
 
 .texto-bloque p {
     margin-bottom: 20px;
@@ -152,7 +174,6 @@ h2::after {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Tarjetas --- */
 .contenedor-bebidas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -180,7 +201,6 @@ h2::after {
     margin-bottom: 20px;
 }
 
-/* --- Footer --- */
 footer {
     background: var(--cafe);
     color: var(--crema);
@@ -209,7 +229,6 @@ footer {
     opacity: 0.6;
 }
 
-/* --- Animaciones Puras --- */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -232,7 +251,6 @@ footer {
     }
 }
 
-/* --- Layout Móvil --- */
 @media (max-width: 768px) {
     .barra-navegacion {
         padding: 15px 5%;
@@ -259,7 +277,6 @@ footer {
 
     .imagen-bloque {
         order: -1;
-        /* Imagen arriba en móviles */
     }
 
     section {
