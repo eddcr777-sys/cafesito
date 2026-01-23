@@ -19,19 +19,27 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
+
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--fondo);
     color: var(--cafe);
+
+
     line-height: 1.6;
+
     overflow-x: hidden;
 }
 
-h1,h2,h3 {
+
+
+h1,
+h2,
+h3 {
     font-family: 'Playfair Display', serif;
 }
-
-
 
 
 
@@ -39,55 +47,75 @@ h1,h2,h3 {
     position: fixed;
     top: 0;
     width: 100%;
+
     padding: 15px 5%;
+
+
     display: flex;
+
     justify-content: space-between;
     align-items: center;
+
     z-index: 1000;
+
     background: rgba(44, 24, 16, 0.95);
     backdrop-filter: blur(10px);
+
+
+
     -webkit-backdrop-filter: blur(10px);
 }
-
 
 
 
 .logo {
     color: var(--dorado);
     font-size: 1.5rem;
+
     font-weight: 800;
+
     text-transform: uppercase;
+
     letter-spacing: 2px;
+
 }
-
-
 
 .enlaces-nav {
     display: flex;
+
+
     gap: 20px;
     list-style: none;
 }
 
-
-
 .enlaces-nav a {
     color: var(--crema);
+
     text-decoration: none;
+
     font-size: 0.8rem;
+
+
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 
 
+
+
 header {
     height: 70vh;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     align-items: center;
     text-align: center;
+
     position: relative;
+
     color: var(--blanco);
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1920');
@@ -96,31 +124,25 @@ header {
     padding: 20px;
 }
 
-
-
-
 header h1 {
     font-size: clamp(2.5rem, 8vw, 5rem);
     margin-bottom: 15px;
     animation: fadeUp 1s ease-out;
 }
 
-
-
-
 header .subtitulo {
     font-size: 1.2rem;
     color: var(--dorado);
+
     animation: fadeIn 1.5s ease-out;
 }
 
-
-
-
 .contenedor-pagina {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5%;
+
+    margin: 0 auto; 
+    
+    padding: 0 5%; 
 }
 
 main {
@@ -131,35 +153,36 @@ section {
     margin-bottom: 80px;
 }
 
-
-
 h2 {
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
     margin-bottom: 40px;
+
     position: relative;
+
 }
 
 h2::after {
     content: '';
+
     display: block;
     width: 50px;
+
     height: 3px;
+
     background: var(--dorado);
     margin: 15px auto 0;
+
 }
-
-
 
 .grid-contenido {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+
     align-items: center;
 }
-
-
-
 
 .texto-bloque p {
     margin-bottom: 20px;
@@ -168,14 +191,18 @@ h2::after {
 .imagen-bloque img {
     width: 100%;
     height: auto;
+
     max-height: 400px;
     object-fit: cover;
+
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .contenedor-bebidas {
+
     display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
@@ -183,8 +210,11 @@ h2::after {
 .tarjeta-bebida {
     background: var(--blanco);
     padding: 30px;
+
     border-radius: 25px;
+
     text-align: center;
+
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
 }
@@ -196,8 +226,11 @@ h2::after {
 .tarjeta-bebida img {
     width: 100%;
     height: 180px;
+
     object-fit: cover;
+
     border-radius: 15px;
+
     margin-bottom: 20px;
 }
 
@@ -205,28 +238,49 @@ footer {
     background: var(--cafe);
     color: var(--crema);
     padding: 60px 5% 40px;
+
+
     text-align: center;
 }
 
 .logo-footer {
     font-size: 2rem;
+
     color: var(--dorado);
     margin-bottom: 20px;
+
 }
 
 .redes-sociales {
     margin-bottom: 30px;
+
 }
 
 .redes-sociales a {
     color: var(--crema);
     text-decoration: none;
+
     margin: 0 15px;
 }
 
 .copyright {
     font-size: 0.8rem;
     opacity: 0.6;
+
+}
+
+.enlaces-nav a {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.enlaces-nav i {
+    width: 18px;
+    height: 18px;
+
+    stroke-width: 2.5;
 }
 
 @keyframes fadeUp {
@@ -253,17 +307,22 @@ footer {
 
 @media (max-width: 768px) {
     .barra-navegacion {
+
         padding: 15px 5%;
     }
 
     .enlaces-nav {
-        gap: 10px;
+        gap: 15px;
+
         flex-wrap: wrap;
+
         justify-content: center;
     }
 
     .enlaces-nav a {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
+
+        padding: 4px 8px;
     }
 
     header {
@@ -271,6 +330,7 @@ footer {
     }
 
     .grid-contenido {
+        
         grid-template-columns: 1fr;
         gap: 30px;
     }
